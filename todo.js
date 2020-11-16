@@ -1,50 +1,58 @@
 "use strict";
 
-const add = document.getElementsByClassName("js-add")[0];
-const list = document.getElementsByClassName("js-list")[0];
-const input = document.getElementsByClassName("js-input")[0];
+const removeBoxButton = document.getElementsByClassName("removeBoxButton_js");
+const removeBox = document.getElementsByClassName("main-box");
+const add = document.getElementsByClassName("js-add-button");
+
+const list = document.getElementsByClassName("js-list");
+const input = document.getElementsByClassName("js-input");
 
 const removeTask = (removeButton) => {
   const targetTask = removeButton.closest("li");
-  list.removeChild(targetTask);
+
+  targetTask.remove();
 };
 
-const addTask = (task) => {
+const completeTask = (completeButton) => {
+  const targetTask = completeButton.closest("li");
+  targetTask.classList.add("isComplete_js");
+};
+
+for (let i = 0; i < removeBoxButton.length; i++) {
+  removeBoxButton[i].addEventListener("click", () => {
+    removeBox[0].remove();
+  });
+}
+
+const addTask = (task, addArgument) => {
   const listItem = document.createElement("li");
   const removeButton = document.createElement("button");
+  const completeButton = document.createElement("button");
 
-  removeButton.innerText = "削除";
+  completeButton.classList.add("completeButton_js");
+  completeButton.innerText = "check";
+  completeButton.addEventListener("click", () => completeTask(completeButton));
+
+  removeButton.classList.add("removeButton_js");
+  removeButton.innerText = "delete";
   removeButton.addEventListener("click", () => removeTask(removeButton));
 
   listItem.innerText = task;
 
+  listItem.appendChild(completeButton);
   listItem.appendChild(removeButton);
-  list.appendChild(listItem);
+
+  list[addArgument].appendChild(listItem);
 };
 
-add.addEventListener("click", (event) => {
-  const task = input.value;
-  addTask(task);
-  input.value = "";
-});
+for (let i = 0; i < add.length; i++) {
 
-// 7~10
-// removeButtonから最も近い親要素のliをtargetTaskに代入
-// listからtargetTask(removeButtonから最も近い親要素のli)を削除
+  add[i].addEventListener("click", (event) => {
+    const task = input[i].value;
+    const addArgument = i;
+    addTask(task, addArgument);
+    input[i].value = "";
 
-// 12~
-// listItemにli要素を作成
-// removeButtonにbutton要素を作成
-
-// removeButtonのbutton要素に削除と表示
-// removeButtonをクリックした場合removeTaskを実行←(removeButtonの意味は？)
-
-//listItemにtaskを表示させる
-
-// listItemにremoveButtonを追加
-// listにlistItemを追加
-
-// addをクリックした場合、以下を実行
-// taskにはinputを初期値として代入
-// 関数addTskにtaskを渡す
-// inputの初期値はなし
+  
+  });
+}

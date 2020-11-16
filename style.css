@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  box-sizing: border-box;
+  color: #3f434a;
+  font-size: 1.5rem;
+  font-family: "Koz Go Pr6 N";
+  background-color: #000080;
+  text-align: center;
+  padding: 40px 0;
+}
+.header{
+  position: relative;
+  display: inline-block;
+
+}
+.main-title {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  padding: 30px 350px;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #6f6f6f;
+  font-weight: normal;
+}
+.box-copyButton{
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  background-color: #6f6f6f;
+  text-shadow: none;
+  border: none ;
+  color: #fff;
+  font-size: 3rem;
+}
+
+
+.todo-contentArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 100px;
+}
+
+
+.main-box {
+  position: relative;
+  width: 400px;
+  display: inline-block;
+  border: 15px solid #c2c2c2;
+  border-top: none;
+  margin: 0 50px 100px;
+  background-color: #fff;
+  text-align-last: left;
+}
+.title {
+
+  border-bottom: 1px solid #000;
+  background-color: #c2c2c2;
+}
+.title-input {
+  width: 250px;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 10px;
+  background-color: #c2c2c2;
+
+}
+
+.task-area {
+  margin: 20px;
+}
+li {
+  width: 100%;
+  list-style-type: disc;
+  position: relative;
+  list-style-position: inside;
+  padding: 10px 0 10px 20px;
+  width: 240px;
+  line-height: 1.4;
+}
+.isComplete_js {
+  text-decoration: line-through;
+}
+.completeButton_js {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  padding: 3px 5px;
+  background-color: #fff;
+}
+.removeButton_js {
+  position: absolute;
+  top: 10px;
+  right: -105px;
+  padding: 3px 5px;
+  background-color: #fff;
+}
+
+.form-area {
+  padding: 10px 0;
+  border-top: 1px solid #000;
+}
+.js-input {
+  width: 250px;
+  padding: 5px 10px;
+  margin-left: 20px;
+  line-height: 1.7;
+}
+.js-add-button {
+  border: 1px solid rgba(255, 0, 0, 0.8);
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+}
+.removeBoxButton_js{
+position: absolute;
+top: 0px;
+right: -15px;
+}
+
+.aaa {
+  background-color: #4a4a4a;
+}
